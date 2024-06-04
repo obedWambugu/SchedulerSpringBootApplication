@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+            name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <title>Thymeleaf Form handling Demo</title>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css"
+          rel="stylesheet">
+</head>
+<body class="container">
+<form class="col card p-3 my-5" method="post" th:action="@{/teacher}" th:object="${teacher}">
+    <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input class="form-control" id="firstName" placeholder="Enter First Name" required autocomplete="off"
+               th:field="*{firstName}"
+               type="text"/>
+    </div>
+    <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input class="form-control" id="lastName" placeholder="Enter Last Name" required  autocomplete="off"
+               th:field="*{lastName}"
+               type="text"/>
+    </div>
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input class="form-control" id="email" placeholder="Enter email" required  autocomplete="off"
+               th:field="*{email}"
+               type="text"/>
+    </div>
+    <div class="form-group">
+        <label for="classRoom">ClassRoom</label>
+        <select class="form-control " id="classRoom" required th:field="*{classRoom}">
+            <option hidden value="">Select a class</option>
+            <option
+                    th:each="class: ${T(com.wambuguobed.ScheduleDemo.Domain.Designation).values()}"
+                    th:text="${class}"
+                    th:value="${class}">
+            </option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="userName">Username</label>
+        <input class="form-control" id="userName" placeholder="Enter username" required  autocomplete="off"
+               th:field="*{userName}"
+               type="text"/>
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input class="form-control" id="password" placeholder="Enter password" required  autocomplete="off"
+               th:field="*{password}"
+               type="password"/>
+    </div>
+
+    <div>
+        <input class="btn btn-primary" type="submit" value="Register">
+        <input class="btn btn-dark" type="reset" value="Reset">
+    </div>
+</form>
+<div th:if="${userMessage}" th:utext="${userMessage}" class="alert alert-success text-center"></div>
+<!--<table class="table table-striped table-bordered ">
+    <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Class Room</th>
+    </tr>
+    <tr th:if="${#lists.isEmpty(teachers)}">
+        <td class="text-center" colspan="7">No Records found. Look for some....!</td>
+    </tr>
+    <tr th:each="timeTable : ${teachers}">
+        <td class="align-middle" th:text="${teacher.id}"></td>
+        <td class="align-middle" th:text="${teacher.firstName}"></td>
+        <td class="align-middle" th:text="${teacher.lastName}"></td>
+        <td class="align-middle" th:text="${teacher.classRoom}"></td>
+        <td class="align-middle" th:text="${teacher.email}"></td>
+        <td class="align-middle text-center"><a class="btn btn-secondary" th:href="'/' + ${teacher.id}">✏</a></td>
+    </tr>
+</table>-->
+</body>
+</html>

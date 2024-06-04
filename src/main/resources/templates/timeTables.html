@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+            name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <title>Thymeleaf CRUD Example</title>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css"
+          rel="stylesheet">
+</head>
+<body class="container">
+<h1>Here is you schedule</h1>
+<table class="table table-striped table-bordered ">
+    <tr>
+        <th>ID</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Subject</th>
+        <th>Class Room</th>
+        <th>Teacher</th>
+    </tr>
+    <tr th:if="${#lists.isEmpty(timeTables)}">
+        <td class="text-center" colspan="7">No Records found. Look for some....!</td>
+    </tr>
+    <tr th:each="timeTable : ${timeTables}">
+        <td class="align-middle" th:text="${timeTable.id}"></td>
+        <td class="align-middle" th:text="${timeTable.date}"></td>
+        <td class="align-middle" th:text="${timeTable.time}"></td>
+        <td class="align-middle" th:text="${timeTable.subject}"></td>
+        <td class="align-middle" th:text="${timeTable.classRoom}"></td>
+        <td class="align-middle" th:text="${timeTable.teacher}"></td>
+    </tr>
+</table>
+</body>
+</html>
