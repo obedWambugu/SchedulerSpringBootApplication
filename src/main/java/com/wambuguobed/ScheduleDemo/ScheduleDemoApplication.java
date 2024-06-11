@@ -48,7 +48,7 @@ public class ScheduleDemoApplication{
 		teacherRepository.save(first);
 		timeTableRepository.save(table);
 	}*/
-	@Bean
+	/*@Bean
 	CommandLineRunner timeTable(TimeTableService timeTableService) {
 		return args -> {
 			// read json and write to db
@@ -63,6 +63,6 @@ public class ScheduleDemoApplication{
 				System.out.println("Unable to save timetables: " + e.getMessage());
 			}
 		};
-	}
+	}*/
 
 }
