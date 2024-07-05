@@ -14,35 +14,35 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-
 @Table(name="TimeTable")
 public class TimeTable{
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Integer Id;
-        private String date;
-        private String time;
+        private LocalDate date;
+        private LocalTime time;
         private String subject;
         private Designation classRoom;
-        private String teacher;
+        // Check on table joins in jpa
+        public String teacher;
 
         public Integer getId() {
                 return Id;
         }
 
-        public String getDate() {
+        public LocalDate getDate() {
                 return date;
         }
 
-        public void setDate(String date) {
+        public void setDate(LocalDate date) {
                 this.date = date;
         }
 
-        public String getTime() {
+        public LocalTime getTime() {
                 return time;
         }
 
-        public void setTime(String time) {
+        public void setTime(LocalTime time) {
                 this.time = time;
         }
 

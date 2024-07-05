@@ -8,6 +8,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface TeacherRepository extends JpaRepository<Teacher, Integer> {
-    @Query("SELECT u FROM Teacher u WHERE u.userName = ?1")
-    Teacher findByEmail(String username);
+    Teacher findByFirstName(String firstName);
 }

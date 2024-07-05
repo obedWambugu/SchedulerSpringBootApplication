@@ -16,6 +16,7 @@ import org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import java.io.IOException;
@@ -28,6 +29,8 @@ import static com.wambuguobed.ScheduleDemo.Domain.Designation.BABY;
 @ComponentScan("com.wambuguobed.ScheduleDemo.Controller")
 @ComponentScan("com.wambuguobed.ScheduleDemo.Service")
 @SpringBootApplication
+@Configuration
+@EnableWebSecurity
 public class ScheduleDemoApplication{
 
 	/*@Autowired

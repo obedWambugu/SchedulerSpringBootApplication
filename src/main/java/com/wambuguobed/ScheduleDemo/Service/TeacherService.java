@@ -8,18 +8,20 @@ import java.util.Optional;
 
 @Component
 public interface TeacherService {
+    //save operation
     Teacher save(Teacher teacher);
+
+    //find operation
+    Teacher findById(int id);
+
+    // Update operation
+    Teacher updatePassword(Integer id, String newPassword);
 
     // Read operation
     List<Teacher> fetchAllTeachers();
 
-    // Update operation
-    Teacher update(Teacher teacher, Integer id);
-
-    Optional<Teacher> findById(int id);
-
     // Delete operation
     void deleteById(Integer id);
 
-    String findByTeacherName(String teacherName);
+    Teacher findByFirstName(String firstName);
 }
