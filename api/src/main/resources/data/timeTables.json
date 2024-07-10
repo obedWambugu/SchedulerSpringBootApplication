@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "date": "2024-07-05",
+    "time": "5:00:00",
+    "subject": "LORDSHIP",
+    "classRoom": "BABY",
+    "teacher": "Obed"
+  },
+  {
+    "id": 2,
+    "date": "2024-07-06",
+    "time": "6:00:00",
+    "subject": "SERVICE",
+    "classRoom": "MIDDLE",
+    "teacher": "Kevo"
+  },
+  {
+    "id": 3,
+    "date": "2024-07-06",
+    "time": "4:00:00",
+    "subject": "INDOOR",
+    "classRoom": "PRETEENS",
+    "teacher": "Kevo"
+  },
+  {
+    "id": 4,
+    "date": "2024-07-06",
+    "time": "6:00:00",
+    "subject": "JOY",
+    "classRoom": "MIDDLE",
+    "teacher": "Obed"
+  }
+]

@@ -1,0 +1,95 @@
+<div class="container h-100">
+    <div class="row h-100">
+        <div class="col-sm-10 col-md-8 col-lg-6 mx-auto d-table h-100">
+            <div class="d-table-cell align-middle">
+
+                <div class="text-center mt-4">
+                    <h1 class="h2">Get started</h1>
+                    <p class="lead">
+                        Register as a teacher to get access to schedule
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <div class="m-sm-4">
+                            <form #submitForm="ngForm" (ngSubmit)="onSubmit(submitForm)" >
+                                <div class="form-group">
+                                    <label for="firstName">First Name</label>
+                                    <input type="text"  
+                                    class="form-control form-control-lg" 
+                                    id="firstName" 
+                                    ngModel name="firstName" 
+                                    placeholder="Enter your first name"
+                                    required #firstName="ngModel">
+                                </div>
+                                <div [hidden]="!firstName.pristine" class="alert alert-danger">FirstName required</div>
+                                <div class="form-group">
+                                    <label for="lastName">Last Name</label>
+                                    <input type="text"  
+                                    class="form-control form-control-lg" 
+                                    id="lastName" 
+                                    ngModel name="lastName" 
+                                    placeholder="Enter your last name"
+                                    required #lastName="ngModel">
+                                </div>
+                                <div [hidden]="!lastName.pristine" class="alert alert-danger">LastName required</div>
+                                <div class="form-group">
+                                    <label for="userName">Username</label>
+                                    <input type="text"  
+                                    class="form-control form-control-lg" 
+                                    id="userName" 
+                                    ngModel name="userName" 
+                                    placeholder="Enter your username"
+                                    required #userName="ngModel">
+                                </div>
+                                <div [hidden]="!userName.pristine" class="alert alert-danger">UserName required</div>
+                                <div class="form-group">
+                                    <label for="classRoom">Class Room</label>
+                                    <select type="text"  
+                                    class="form-control form-control-lg" 
+                                    id="classRoom" 
+                                    ngModel name="classRoom" 
+                                    placeholder="Enter your classRoom"
+                                    required #classRoom="ngModel">
+                                        <option hidden value="">Select a class</option>
+                                        <option>BABY</option>
+                                        <option>MIDDLE</option>
+                                        <option>PRETEENS</option>
+                                        <option>TEENS</option>
+                                    </select>
+                                </div>
+                                <div [hidden]="!classRoom.pristine" class="alert alert-danger">ClassRoom is required</div>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="text"  
+                                    class="form-control" 
+                                    id="email" 
+                                    ngModel name="email" 
+                                    placeholder="Enter your email address"
+                                    required #email="ngModel">
+                                </div>
+                                <div [hidden]="!email.pristine" class="alert alert-danger">Email is required</div>
+                                <div class="form-group">
+                                    <label>Password</label>
+                                    <input type="password" 
+                                    class="form-control" 
+                                    id="password" 
+                                    ngModel name="password" 
+                                    placeholder="Enter your password"
+                                    required #password="ngModel">
+                                </div>
+                                <div [hidden]="!password.pristine" class="alert alert-danger">Password is required</div>
+                                <div class="text-center mt-3">
+                                    <!-- <a href="index.html" class="btn btn-lg btn-primary">Sign up</a> -->
+                                    <button [disabled] = "submitForm.form.invalid" type="submit" class="btn btn-lg btn-primary">Sign up</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
